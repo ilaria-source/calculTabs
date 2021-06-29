@@ -4,7 +4,8 @@ import { TypeCalc } from './enums/typeCalculator.model';
 export class CalcolatorType {
   constructor(
     public typeName: TypeCalc,
-    public url: string,
-    public isOn: boolean
+    public icon: string,
+    public isOn: boolean,
+    public element: string
     ){}
 }
