@@ -15,15 +15,12 @@ export class TabsPage {
     {typeName: TypeCalc.scientific,icon: 'construct',  isOn: false, element: 'tab3'},
     {typeName: TypeCalc.programmer,icon: 'save',  isOn: false, element: 'tab4'}
   ];
-  dataCalcList.forEach(function(item){
 
-    if (item.isOn === false)
-    {
-      item.element = ''
-    }
-
-  };
-
-  constructor() {}
+  // dataCalcList.forEach(function(item){
+  //   if (item.isOn == false)
+  //   {
+  //     item.element = '' ;
+  //   }
+  // }
 
 }

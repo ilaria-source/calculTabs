@@ -1,5 +1,5 @@
 export enum TypeCalc {
-  classic,
-  scientific,
-  programmer
+  classic = 'Classic',
+  scientific= 'Scientific',
+  programmer= 'Programmer'
 }
