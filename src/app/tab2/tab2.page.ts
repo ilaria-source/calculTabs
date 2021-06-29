@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab2Page implements OnInit {
 
-
   subText = '';
   mainText = '';
   operand1: number;
