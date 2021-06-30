@@ -8,6 +8,7 @@
     </ion-tab-button>
 
     <ion-tab-button *ngFor="let item of dataCalcList" >
+      <!-- se la calcolatrice è attiva, rendi cliccabile il bottone -->
       <ng-container *ngIf='item.isOn === true' >
         <ion-tab-button tab='{{item.element}}' >
         <ion-icon icon={{item.icon}}></ion-icon>
@@ -15,6 +16,7 @@
       </ion-tab-button>
       </ng-container>
       <ng-container *ngIf='item.isOn === false' >
+        <!-- se la calcolatrice non è attiva, il bottone non è cliccabile -->
         <ion-tab-button tab='' >
         <ion-icon icon={{item.icon}}></ion-icon>
         <ion-label>{{item.typeName}}</ion-label>
