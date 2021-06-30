@@ -24,12 +24,14 @@ const routes: Routes = [
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
+        //su url incompleta reindirizza su tab che contiene la home
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
       }
     ]
   },
+  //su url incompleta reindirizza su tab che contiene la home
   {
     path: '',
     redirectTo: '/tabs/tab1',
