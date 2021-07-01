@@ -9,8 +9,8 @@ import { TypeCalc } from '../models/enums/typeCalculator.model';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
-  public dataCalcList: {typeName: TypeCalc; icon: string; isOn: boolean; element: string}[] = [
+  public dataCalcList: {typeName: TypeCalc; icon: string; isOn: boolean; element: string}[] =
+  [
     {typeName: TypeCalc.classic,icon: 'bug',  isOn: true, element: 'tab2'},
     {typeName: TypeCalc.scientific,icon: 'construct',  isOn: false, element: 'tab3'},
     {typeName: TypeCalc.programmer,icon: 'save',  isOn: false, element: 'tab4'}
@@ -22,5 +22,4 @@ export class TabsPage {
   //     item.element = '' ;
   //   }
   // }
-
 }
