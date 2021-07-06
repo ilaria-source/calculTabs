@@ -1,9 +1,9 @@
-body {
-background: #085078;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #85D8CE, #085078);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #85D8CE, #085078); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-width: 100%;
-}
+// body {
+// background: #085078;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #85D8CE, #085078);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #85D8CE, #085078); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// width: 100%;
+// }
 
 .calculator
 {
@@ -48,7 +48,7 @@ width: 100%;
 
 button:hover
 {
-  background-color: hsla(180, 100%, 40%, 0.3);
+  background-color: hsl(180, 64%, 50%);
   transition: .2s;
 }
 
@@ -69,20 +69,20 @@ button:hover
 
 .triggers
 {
-  background-color: #ffc266;
+  background-color: #fbdcae;
 }
 
 .numbers
 {
-  background-color: #999999;
+  background-color: #cd8fe5;
 }
 
 .basic-stuff
 {
-  background-color: #80d4ff;
+  background-color: #b9e3f8d7;
 }
 
 .complex-stuff
 {
-  background-color: #80ffff;
+  background-color: #7bd3fb;
 }

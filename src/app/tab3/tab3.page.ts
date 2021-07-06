@@ -18,9 +18,19 @@ export class Tab3Page implements OnInit {
   constructor() { }
 
   pressKey(key: string) {
-    if (key === '/' || key === 'x' || key === '-' || key === '+') {
+    if (key === '/' || key === 'x' || key === '-' || key === '+'
+    || key === '<=' || key === '±' || key === '%' || key === 'x!'
+    || key === 'x^' || key === 'ln' || key === 'e' || key === 'x²'
+    || key === 'log' || key === 'cos' || key === '√' || key === 'sin'
+    || key === 'tan' || key === '°' || key === 'rad' || key === 'n'
+    ) {
       const lastKey = this.mainText[this.mainText.length - 1];
-      if (lastKey === '/' || lastKey === 'x' || lastKey === '-' || lastKey === '+')  {
+      if (lastKey === '/' || lastKey === 'x' || lastKey === '-' || lastKey === '+'
+      || lastKey === '<=' || lastKey === '±' || lastKey === '%' || lastKey === 'x!'
+      || lastKey === 'x^' || lastKey === 'ln' || lastKey === 'e' || lastKey === 'x²'
+      || lastKey === 'log' || lastKey === 'cos' || lastKey === '√' || lastKey === 'sin'
+      || lastKey === 'tan' || lastKey === '°' || lastKey === 'rad' || lastKey === 'n'
+      )  {
         this.operatorSet = true;
       }
       if ((this.operatorSet) || (this.mainText === '')) {
@@ -72,7 +82,34 @@ export class Tab3Page implements OnInit {
         this.mainText = 'ERROR';
         this.subText = 'Range Exceeded';
       }
-    } else {
+    } else if (this.operator === '√') {
+      this.subText = this.mainText;
+      this.mainText = Math.sqrt(this.operand1).toString();
+    } else if (this.operator === 'x²') {
+      this.subText = this.mainText;
+      this.mainText = (this.operand1 * this.operand1).toString();
+    } else if (this.operator === 'ln' ){
+      this.subText = this.mainText;
+      this.mainText = Math.log(this.operand1).toString();
+    } else if (this.operator === 'sin'){
+      this.subText= this.mainText;
+      this.mainText = Math.sin(this.operand1).toString();
+    } else if (this.operator === 'cos'){
+      this.subText= this.mainText;
+      this.mainText = Math.cos(this.operand1).toString();
+    } else if (this.operator === 'tan'){
+      this.subText= this.mainText;
+      this.mainText = Math.tan(this.operand1).toString();
+    } else if (this.operator === 'log'){
+      this.subText= this.mainText;
+      this.mainText = Math.log10(this.operand1).toString();
+    } else if (this.operator === 'e'){
+      this.subText= this.mainText;
+      this.mainText = Math.E(this.operand1).toString();
+    }
+
+    else
+    {
       this.subText = 'ERROR: Invalid Operation';
     }
     this.answered = true;
