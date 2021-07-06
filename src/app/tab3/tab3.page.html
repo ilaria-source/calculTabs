@@ -13,57 +13,56 @@
     </ion-toolbar>
   </ion-header>
 
-
-
   <div class="calculator">
-    <input type="text" id="screen" maxlength="20">
-    <div class="calc-buttons">
+    <!-- <input type="text" id="screen" maxlength="20"> -->
 
-
-
-<div class="functions-one">
-    <button class="button triggers">AC</button>
-    <button class="button basic-stuff">(</button>
-    <button class="button basic-stuff">)</button>
-    <button class="button numbers">7</button>
-    <button class="button numbers">8</button>
-    <button class="button numbers">9</button>
-    <button class="button numbers">4</button>
-    <button class="button numbers">5</button>
-    <button class="button numbers">6</button>
-    <button class="button numbers">1</button>
-    <button class="button numbers">2</button>
-    <button class="button numbers">3</button>
-    <button class="button numbers">0</button>
-    <button class="button basic-stuff">.</button>
-    <button class="button triggers">=</button>
-
-
-</div>
-
-    <div class="functions-two">
-        <button class="button triggers">&#60;=</button>
-        <button class="button basic-stuff">±</button>
-        <button class="button complex-stuff">%</button>
-        <button class="button complex-stuff">x !</button>
-        <button class="button basic-stuff">/</button>
-        <button class="button complex-stuff">x^</button>
-        <button class="button complex-stuff">ln</button>
-        <button class="button complex-stuff">e</button>
-        <button class="button basic-stuff">*</button>
-        <button class="button complex-stuff">x ²</button>
-        <button class="button complex-stuff">log</button>
-        <button class="button complex-stuff">cos</button>
-        <button class="button basic-stuff">-</button>
-        <button class="button complex-stuff">√</button>
-        <button class="button complex-stuff">sin</button>
-        <button class="button complex-stuff">tan</button>
-        <button class="button basic-stuff">+</button>
-        <button class="button complex-stuff">∘</button>
-        <button class="button complex-stuff">rad</button>
-        <button class="button complex-stuff">n</button>
+    <div class="maindisplay" id="inputscreen">
+      <!-- <div class="subdisplay">{{ subText }}</div> -->
+      {{ mainText }}
     </div>
 
+    <div class="calc-buttons">
+
+    <div class="functions-one">
+      <button class="button triggers" (click)="allClear()">AC</button>
+      <button class="button basic-stuff">(</button>
+      <button class="button basic-stuff">)</button>
+      <button class="button numbers" (click)="pressKey('7')">7</button>
+      <button class="button numbers" (click)="pressKey('8')">8</button>
+      <button class="button numbers" (click)="pressKey('9')">9</button>
+      <button class="button numbers" (click)="pressKey('4')">4</button>
+      <button class="button numbers" (click)="pressKey('5')">5</button>
+      <button class="button numbers" (click)="pressKey('6')">6</button>
+      <button class="button numbers" (click)="pressKey('1')">1</button>
+      <button class="button numbers" (click)="pressKey('2')">2</button>
+      <button class="button numbers" (click)="pressKey('3')">3</button>
+      <button class="button numbers" (click)="pressKey('0')">0</button>
+      <button class="button basic-stuff" (click)="pressKey('.')">.</button>
+      <button class="button triggers" (click)="getAnswer()">=</button>
+    </div>
+
+    <div class="functions-two">
+      <button class="button triggers">&#60;=</button>
+      <button class="button basic-stuff">±</button>
+      <button class="button complex-stuff">%</button>
+      <button class="button complex-stuff">x!</button>
+      <button class="button basic-stuff" (click)="pressKey('/')">/</button>
+      <button class="button complex-stuff">x^</button>
+      <button class="button complex-stuff">ln</button>
+      <button class="button complex-stuff">e</button>
+      <button class="button basic-stuff" (click)="pressKey('*')">*</button>
+      <button class="button complex-stuff">x²</button>
+      <button class="button complex-stuff">log</button>
+      <button class="button complex-stuff">cos</button>
+      <button class="button basic-stuff" (click)="pressKey('-')">-</button>
+      <button class="button complex-stuff">√</button>
+      <button class="button complex-stuff">sin</button>
+      <button class="button complex-stuff">tan</button>
+      <button class="button basic-stuff" (click)="pressKey('+')">+</button>
+      <button class="button complex-stuff">∘</button>
+      <button class="button complex-stuff">rad</button>
+      <button class="button complex-stuff">n</button>
+    </div>
   </div>
 </div>
 
