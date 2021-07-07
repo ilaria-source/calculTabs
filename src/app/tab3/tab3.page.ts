@@ -101,18 +101,58 @@ export class Tab3Page implements OnInit {
       this.subText= this.mainText;
       this.mainText = Math.tan(this.operand1).toString();
     } else if (this.operator === 'log'){
-      this.subText= this.mainText;
+      this.subText = this.mainText;
       this.mainText = Math.log10(this.operand1).toString();
     } else if (this.operator === 'e'){
+      this.subText = this.mainText;
+      this.mainText = (Math.E * this.operand1).toString();
+    } else if (this.operator === 'x!'){
+      if (this.operand1 === 0)
+      {
+        this.subText = this.mainText;
+        this.mainText = '1';
+      } else if (this.operand1 < 0)
+      {
+        this.mainText = 'undefined';
+      } else
+      {
+        this.subText = this.mainText;
+        let subtot = 1;
+        for( let i = this.operand1; i>0; i-- )
+        {
+          subtot *= i;
+        }
+        this.mainText = subtot.toString();
+      }
+    } else if (this.operator === '°')
+    {
       this.subText= this.mainText;
-      this.mainText = Math.E(this.operand1).toString();
+      this.mainText =  (this.operand1 * (180/Math.PI)).toString();
+    } else if (this.operator === 'rad')
+    {
+      this.subText= this.mainText;
+      this.mainText =  (this.operand1 * (Math.PI /180)).toString();
+    } else if (this.operator === '%')
+    {
+
     }
 
+
+    // (this.operator ==='<=')
+    // {
+
+    // }
+    // // '<='       '±'    'n'
     else
     {
       this.subText = 'ERROR: Invalid Operation';
     }
     this.answered = true;
+  }
+
+  backspace() {
+    this.subText= this.mainText;
+      this.mainText =  this.mainText.substring(0, this.mainText.length - 1);
   }
 
   ngOnInit() {}
