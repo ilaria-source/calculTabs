@@ -53,6 +53,7 @@ export class Tab3Page implements OnInit {
   }
 
   getAnswer() {
+
     this.calculationString = this.mainText;
     this.operand2 = parseFloat(this.mainText.split(this.operator)[1]);
     if (this.operator === '/') {
@@ -67,7 +68,7 @@ export class Tab3Page implements OnInit {
       this.mainText = (this.operand1 * this.operand2).toString();
       this.subText = this.calculationString;
       if (this.mainText.length > 9) {
-        this.mainText = 'ERROR';
+        this.mainText = 'ERROR!!';
         this.subText = 'Range Exceeded';
       }
     } else if (this.operator === '-') {
@@ -79,7 +80,7 @@ export class Tab3Page implements OnInit {
       this.mainText = (this.operand1 + this.operand2).toString();
       this.subText = this.calculationString;
       if (this.mainText.length > 9) {
-        this.mainText = 'ERROR';
+        this.mainText = 'ERROR!!';
         this.subText = 'Range Exceeded';
       }
     } else if (this.operator === '√') {
@@ -107,16 +108,15 @@ export class Tab3Page implements OnInit {
       this.subText = this.mainText;
       this.mainText = (Math.E * this.operand1).toString();
     } else if (this.operator === 'x!'){
+      this.subText = this.mainText;
       if (this.operand1 === 0)
       {
-        this.subText = this.mainText;
         this.mainText = '1';
       } else if (this.operand1 < 0)
       {
         this.mainText = 'undefined';
       } else
       {
-        this.subText = this.mainText;
         let subtot = 1;
         for( let i = this.operand1; i>0; i-- )
         {
@@ -132,17 +132,32 @@ export class Tab3Page implements OnInit {
     {
       this.subText= this.mainText;
       this.mainText =  (this.operand1 * (Math.PI /180)).toString();
+    } else if (this.operator ==='x^')
+    {
+      this.subText = this.mainText;
+      this.mainText = (Math.pow( this.operand1, this.operand2)).toString();
     } else if (this.operator === '%')
     {
+      this.subText = this.mainText;
+      if (this.operand2 !== 0)
+      {
+        this.mainText = (this.operand1 - ((this.operand2 * this.operand1)/100 )).toString();
 
+      } else
+      {
+        this.mainText = (this.operand1 /100).toString();
+      }
+    } else if (this.operator === 'π')
+    {
+      this.subText = this.mainText;
+      this.mainText = (Math.PI * this.operand1).toString();
+
+    } else if (this.operator === '±')
+    {
+      this.subText = this.mainText;
+      this.mainText = 'WORK IN PROGRESS';
     }
 
-
-    // (this.operator ==='<=')
-    // {
-
-    // }
-    // // '<='       '±'    'n'
     else
     {
       this.subText = 'ERROR: Invalid Operation';
