@@ -19,18 +19,18 @@ export class Tab3Page implements OnInit {
   constructor() { }
 
   pressKey(key: string) {
-    if (key === '/' || key === 'x' || key === '-' || key === '+'
+    if (key === '÷' || key === '*' || key === '-' || key === '+'
     || key === '<=' || key === '±' || key === '%' || key === 'x!'
     || key === 'x^' || key === 'ln' || key === 'e' || key === 'x²'
     || key === 'log' || key === 'cos' || key === '√' || key === 'sin'
-    || key === 'tan' || key === '°' || key === 'rad' || key === 'n'
+    || key === 'tan' || key === '°' || key === 'rad' || key === 'π'
     ) {
       const lastKey = this.mainText[this.mainText.length - 1];
-      if (lastKey === '/' || lastKey === 'x' || lastKey === '-' || lastKey === '+'
+      if (lastKey === '÷' || lastKey === '*' || lastKey === '-' || lastKey === '+'
       || lastKey === '<=' || lastKey === '±' || lastKey === '%' || lastKey === 'x!'
       || lastKey === 'x^' || lastKey === 'ln' || lastKey === 'e' || lastKey === 'x²'
       || lastKey === 'log' || lastKey === 'cos' || lastKey === '√' || lastKey === 'sin'
-      || lastKey === 'tan' || lastKey === '°' || lastKey === 'rad' || lastKey === 'n'
+      || lastKey === 'tan' || lastKey === '°' || lastKey === 'rad' || lastKey === 'π'
       )  {
         this.operatorSet = true;
       }
@@ -53,7 +53,7 @@ export class Tab3Page implements OnInit {
     this.subText = '';
     this.operatorSet = false;
   }
-
+//getAnswer viene richiamato dall'uguale
   getAnswer()
   {
     this.calculationString = this.mainText;
@@ -63,7 +63,7 @@ export class Tab3Page implements OnInit {
     {
       this.divide();
     }
-    else if (this.operator === 'x')
+    else if (this.operator === '*')
     {
       this.multiply();
     }
