@@ -17,7 +17,7 @@
       </ng-container>
       <ng-container *ngIf='item.isOn === false' >
         <!-- se la calcolatrice non è attiva, il bottone non è cliccabile -->
-        <ion-tab-button tab='' >
+        <ion-tab-button tab='{{item.element}}' disabled>
         <ion-icon icon={{item.icon}}></ion-icon>
         <ion-label>{{item.typeName}}</ion-label>
       </ion-tab-button>
