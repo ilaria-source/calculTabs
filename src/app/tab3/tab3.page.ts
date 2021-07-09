@@ -53,12 +53,33 @@ export class Tab3Page implements OnInit {
     this.subText = '';
     this.operatorSet = false;
   }
+
+  // equals()
+  // {
+  //   this.subText= this.mainText;
+	// 	this.mainText =
+
+  //   if ((display.value).indexOf("^") > -1) {
+  //     var base = (display.value).slice(0, (display.value).indexOf("^"));
+  //     var exponent = (display.value).slice((display.value).indexOf("^") + 1);
+  //     display.value = eval("Math.pow(" + base + "," + exponent + ")");
+  //   } else {
+  //     display.value = eval(display.value)
+  //     checkLength()
+  //     syntaxError()
+  //   }
+  // }
+
+
 //getAnswer viene richiamato dall'uguale
   getAnswer()
   {
     this.calculationString = this.mainText;
     this.operand2 = parseFloat(this.mainText.split(this.operator)[1]);
-
+    // if (this.operator === '=')
+    // {
+    //   this.equals();
+    // }
     if (this.operator === '÷')
     {
       this.divide();
@@ -142,7 +163,6 @@ export class Tab3Page implements OnInit {
       }
       this.answered = true;
   }
-
 
   backspace()
 	{
@@ -283,14 +303,14 @@ export class Tab3Page implements OnInit {
 	percent() //non funziona bene
 	{
 		this.subText = this.mainText;
-		if (this.operand2 !== 0)
+		if (!isNaN(this.operand2))
 		{
-			this.mainText = (this.operand1 - ((this.operand2 * this.operand1)/100 )).toString();
+			this.mainText = (this.operand1 - (this.operand2 * (this.operand1) / 100 )).toString(); //qua manda il tutto in NaN
 		}
 		else
 		{
-			this.mainText = (this.operand1 /100).toString();
-		}
+			this.mainText= (this.operand1 /100).toString();; //ok
+    }
 	}
 
 	pi()
