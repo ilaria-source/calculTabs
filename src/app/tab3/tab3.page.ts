@@ -322,9 +322,22 @@ export class Tab3Page implements OnInit {
 	 plusMinus()
 	{
 		this.subText = this.mainText;
-		this.mainText = 'WORK IN PROGRESS';
+    if(Math.sign(this.operand1) === 1)
+    {
+      const sign= -Math.abs (this.operand1 );
+      this.mainText = sign.toString();
+    }
+    else if (Math.abs(this.operand1) === -1)
+    {
+      const sign= Math.abs (this.operand1 );
+      this.mainText = sign.toString();
+    } else
+    {
+      this.mainText = this.operand1.toString();
+    }
 	}
 
+  //LE PARENTESI SONO... 'WORK IN PROGRESS';
 
   ngOnInit(){ }
   }
